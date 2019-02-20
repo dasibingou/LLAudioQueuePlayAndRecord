@@ -78,6 +78,7 @@ void DeriveBufferSize (AudioStreamBasicDescription inDesc,UInt32 maxPacketSize,F
 @property (nonatomic, copy) NSString *filePath;
 @property (nonatomic, strong) dispatch_queue_t playQueue;
 @property (nonatomic, assign) AQPlayerState playerState;
+@property (nonatomic, assign) BOOL isPause;
 
 @end
 
@@ -165,6 +166,41 @@ void DeriveBufferSize (AudioStreamBasicDescription inDesc,UInt32 maxPacketSize,F
         }
         HandleOutputBuffer(&_playerState,_playerState.mQueue,_playerState.mBuffers[i]);
     }
+}
+
+- (void)startPlay {
+    if (self.isPause == YES) {
+        AudioQueueStart(_playerState.mQueue, NULL);
+    }else {
+        dispatch_async(self.playQueue, ^{
+            Float32 gain = 10.0;
+            
+            // Optionally, allow user to override gain setting here
+            AudioQueueSetParameter (
+                                    _playerState.mQueue,
+                                    kAudioQueueParam_Volume,
+                                    gain
+                                    );
+            _playerState.mIsRunning = true;
+            
+            AudioQueueStart(_playerState.mQueue, NULL);
+            
+            printf("Playing...\n");
+            
+            [[NSRunLoop currentRunLoop] run];
+        });
+    }
+    
+}
+
+- (void)stop {
+    self.isPause = NO;
+    AudioQueueStop(_playerState.mQueue, true);
+}
+
+- (void)pause {
+    self.isPause = YES;
+    AudioQueuePause(_playerState.mQueue);
 }
 
 - (BOOL)checkError:(int)error {
