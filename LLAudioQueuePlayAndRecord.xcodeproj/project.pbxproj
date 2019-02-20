@@ -15,6 +15,8 @@
 		BB239110221D30CE00FD9C88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23910F221D30CE00FD9C88 /* main.m */; };
 		BB239119221D332C00FD9C88 /* AudioQueuePlay.m in Sources */ = {isa = PBXBuildFile; fileRef = BB239118221D332C00FD9C88 /* AudioQueuePlay.m */; };
 		BB23911C221D335100FD9C88 /* AudioQueueRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23911B221D335100FD9C88 /* AudioQueueRecord.m */; };
+		BB239121221D4E1D00FD9C88 /* Bridge - 雾都历.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB23911F221D4E1D00FD9C88 /* Bridge - 雾都历.mp3 */; };
+		BB239122221D4E1D00FD9C88 /* G.E.M.邓紫棋 - 喜欢你.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB239120221D4E1D00FD9C88 /* G.E.M.邓紫棋 - 喜欢你.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		BB23911A221D335100FD9C88 /* AudioQueueRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioQueueRecord.h; sourceTree = "<group>"; };
 		BB23911B221D335100FD9C88 /* AudioQueueRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioQueueRecord.m; sourceTree = "<group>"; };
 		BB23911D221D337D00FD9C88 /* AudioQueueConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioQueueConfig.h; sourceTree = "<group>"; };
+		BB23911F221D4E1D00FD9C88 /* Bridge - 雾都历.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bridge - 雾都历.mp3"; sourceTree = "<group>"; };
+		BB239120221D4E1D00FD9C88 /* G.E.M.邓紫棋 - 喜欢你.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "G.E.M.邓紫棋 - 喜欢你.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 		BB2390FF221D30CC00FD9C88 /* LLAudioQueuePlayAndRecord */ = {
 			isa = PBXGroup;
 			children = (
+				BB23911E221D4DE100FD9C88 /* Resource */,
 				BB239116221D330300FD9C88 /* AudioQueue */,
 				BB239100221D30CC00FD9C88 /* AppDelegate.h */,
 				BB239101221D30CC00FD9C88 /* AppDelegate.m */,
@@ -89,6 +94,15 @@
 				BB23911D221D337D00FD9C88 /* AudioQueueConfig.h */,
 			);
 			path = AudioQueue;
+			sourceTree = "<group>";
+		};
+		BB23911E221D4DE100FD9C88 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BB23911F221D4E1D00FD9C88 /* Bridge - 雾都历.mp3 */,
+				BB239120221D4E1D00FD9C88 /* G.E.M.邓紫棋 - 喜欢你.mp3 */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +163,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB23910D221D30CE00FD9C88 /* LaunchScreen.storyboard in Resources */,
+				BB239122221D4E1D00FD9C88 /* G.E.M.邓紫棋 - 喜欢你.mp3 in Resources */,
+				BB239121221D4E1D00FD9C88 /* Bridge - 雾都历.mp3 in Resources */,
 				BB23910A221D30CE00FD9C88 /* Assets.xcassets in Resources */,
 				BB239108221D30CC00FD9C88 /* Main.storyboard in Resources */,
 			);
