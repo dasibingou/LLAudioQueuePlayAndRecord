@@ -10,18 +10,6 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-typedef struct AQPlayerState {
-    AudioStreamBasicDescription   mDataFormat;
-    AudioQueueRef                 mQueue;
-    AudioQueueBufferRef           mBuffers[QUEUE_BUFFER_SIZE];
-    AudioFileID                   mAudioFile;
-    UInt32                        bufferByteSize;
-    SInt64                        mCurrentPacket;
-    UInt32                        mNumPacketsToRead;
-    AudioStreamPacketDescription  *mPacketDescs;
-    bool                          mIsRunning;
-}AQPlayerState;
-
 //The Playback Audio Queue Callback
 static void HandleOutputBuffer(void* aqData,AudioQueueRef inAQ,AudioQueueBufferRef inBuffer){
     AQPlayerState *pAqData = (AQPlayerState *) aqData;
@@ -90,6 +78,7 @@ void DeriveBufferSize (AudioStreamBasicDescription inDesc,UInt32 maxPacketSize,F
     if (self) {
         self.filePath = file;
         NSString *queueLabel = [NSString stringWithFormat:@"play queue %@",file];
+        //播放线程队列
         self.playQueue = dispatch_queue_create([queueLabel cStringUsingEncoding:NSUTF8StringEncoding], DISPATCH_QUEUE_SERIAL);
         [self createAudioQueue];
     }

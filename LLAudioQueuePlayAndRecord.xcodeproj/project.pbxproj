@@ -17,6 +17,7 @@
 		BB23911C221D335100FD9C88 /* AudioQueueRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23911B221D335100FD9C88 /* AudioQueueRecord.m */; };
 		BB239121221D4E1D00FD9C88 /* Bridge - 雾都历.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB23911F221D4E1D00FD9C88 /* Bridge - 雾都历.mp3 */; };
 		BB239122221D4E1D00FD9C88 /* G.E.M.邓紫棋 - 喜欢你.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB239120221D4E1D00FD9C88 /* G.E.M.邓紫棋 - 喜欢你.mp3 */; };
+		BB23912B221FA12200FD9C88 /* AudioQueueSocketPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23912A221FA12200FD9C88 /* AudioQueueSocketPlay.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		BB23911D221D337D00FD9C88 /* AudioQueueConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioQueueConfig.h; sourceTree = "<group>"; };
 		BB23911F221D4E1D00FD9C88 /* Bridge - 雾都历.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bridge - 雾都历.mp3"; sourceTree = "<group>"; };
 		BB239120221D4E1D00FD9C88 /* G.E.M.邓紫棋 - 喜欢你.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "G.E.M.邓紫棋 - 喜欢你.mp3"; sourceTree = "<group>"; };
+		BB239129221FA12200FD9C88 /* AudioQueueSocketPlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioQueueSocketPlay.h; sourceTree = "<group>"; };
+		BB23912A221FA12200FD9C88 /* AudioQueueSocketPlay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioQueueSocketPlay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 			children = (
 				BB239117221D332C00FD9C88 /* AudioQueuePlay.h */,
 				BB239118221D332C00FD9C88 /* AudioQueuePlay.m */,
+				BB239129221FA12200FD9C88 /* AudioQueueSocketPlay.h */,
+				BB23912A221FA12200FD9C88 /* AudioQueueSocketPlay.m */,
 				BB23911A221D335100FD9C88 /* AudioQueueRecord.h */,
 				BB23911B221D335100FD9C88 /* AudioQueueRecord.m */,
 				BB23911D221D337D00FD9C88 /* AudioQueueConfig.h */,
@@ -180,6 +185,7 @@
 				BB23911C221D335100FD9C88 /* AudioQueueRecord.m in Sources */,
 				BB239119221D332C00FD9C88 /* AudioQueuePlay.m in Sources */,
 				BB239105221D30CC00FD9C88 /* ViewController.m in Sources */,
+				BB23912B221FA12200FD9C88 /* AudioQueueSocketPlay.m in Sources */,
 				BB239110221D30CE00FD9C88 /* main.m in Sources */,
 				BB239102221D30CC00FD9C88 /* AppDelegate.m in Sources */,
 			);
