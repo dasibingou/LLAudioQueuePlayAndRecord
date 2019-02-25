@@ -8,6 +8,14 @@
 
 #import "AudioQueueRecord.h"
 
+@interface AudioQueueRecord ()
+
+@property (nonatomic,assign) BOOL startRecord;
+
+@end
+
 @implementation AudioQueueRecord
+
+
 
 @end

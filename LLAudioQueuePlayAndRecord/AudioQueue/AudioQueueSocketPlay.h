@@ -14,12 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AudioQueueSocketPlay : NSObject
 
+@property (nonatomic, assign) AQPlayerState playerState;
+
 + (instancetype)shareInstance;
 
-/**
- 开始播放队列
- */
-- (void)starPlayQueue:(BOOL)startPlay;
 /**
  开始播放队列
  */

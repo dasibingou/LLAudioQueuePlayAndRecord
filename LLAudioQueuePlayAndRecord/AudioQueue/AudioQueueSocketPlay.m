@@ -15,7 +15,6 @@
 
 @interface AudioQueueSocketPlay ()
 
-@property (nonatomic, assign) AQPlayerState playerState;
 @property (strong, nonatomic) NSMutableArray *receiveData;//接收数据的数组
 @property (strong, nonatomic) NSLock *synclockOut;//播放的bufffer同步
 @property (nonatomic,assign) BOOL startPlay;
