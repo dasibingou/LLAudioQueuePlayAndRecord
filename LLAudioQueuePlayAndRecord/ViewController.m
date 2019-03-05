@@ -11,6 +11,7 @@
 
 #import "AudioQueueSocketRecord.h"
 #import "AudioQueueSocketPlay.h"
+#import "UDPNATManager.h"
 
 #import "GCDAsyncUdpSocket.h"
 #import "GCDAsyncSocket.h"
@@ -27,8 +28,9 @@
 #define IP_ADDR_IPv6    @"ipv6"
 
 #define kTCPDefaultPort  58088
+#define kUDPDefaultPort  9000
 
-@interface ViewController () <GCDAsyncSocketDelegate>
+@interface ViewController () <GCDAsyncSocketDelegate,GCDAsyncUdpSocketDelegate>
 {
     BOOL isStartSend;
 }
@@ -38,6 +40,7 @@
 @property (strong, nonatomic) GCDAsyncSocket             *tcpSocket;
 @property (strong, nonatomic) GCDAsyncSocket             *acceptSocket;
 @property (strong, nonatomic) GCDAsyncSocket             *targetSocket;
+@property (strong, nonatomic) GCDAsyncUdpSocket             *udpSocket;
 
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 @property (weak, nonatomic) IBOutlet UITextField *ipTF;
@@ -67,6 +70,9 @@
         }
         
     };
+    
+    NSData *data = [@"22" dataUsingEncoding:NSUTF8StringEncoding];
+    [self.udpSocket sendData:data toHost:@"127.0.0.1" port:kUDPDefaultPort withTimeout:-1 tag:0];
 }
 
 - (GCDAsyncSocket *)tcpSocket
@@ -87,6 +93,20 @@
         return _acceptSocket;
     }
     return nil;
+}
+
+- (GCDAsyncUdpSocket *)udpSocket
+{
+    if (_udpSocket == nil)
+    {
+        //socket
+        _udpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+//        //绑定端口
+//        [_udpSocket bindToPort:kDefaultPort error:nil];
+//        //让udpSocket 开始接收数据
+//        [_udpSocket beginReceiving:nil];
+    }
+    return _udpSocket;
 }
 
 //获取设备当前网络IP地址
@@ -267,6 +287,15 @@
     self.msgTF.text = @"";
 }
 
+- (IBAction)udpNAT:(id)sender
+{
+//    NSString *ip = @"10.128.70.70"; //self.ipTF.text
+//    BOOL flag = [[UDPNATManager sharedManager] sendDataWithTargetIP:ip targetPort:@"58088" content:@"000"];
+//    if (flag) {
+//        [self writeLog:@"打洞成功"];
+//    }
+}
+
 #pragma mark - GCDAsyncSocketDelegate
 
 - (void)socket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket
@@ -335,6 +364,28 @@
     [self writeLog:[NSString stringWithFormat:@"TCP连接断开"]];
     [self writeLog:[err description]];
 //    self.tipLabel.text = [NSString stringWithFormat:@"TCP连接断开"];
+    
+}
+
+#pragma mark - GCDAsyncUdpSocketDelegate
+
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didSendDataWithTag:(long)tag
+{
+    NSLog (@"DidSend");
+}
+
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data
+      fromAddress:(NSData *)address
+withFilterContext:(id)filterContext
+{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        if (isStartSend)
+        {
+            
+        }
+    });
+    NSLog(@"%@: rece data %lu",[[UIDevice currentDevice] name] , [data length]);
+    
     
 }
 

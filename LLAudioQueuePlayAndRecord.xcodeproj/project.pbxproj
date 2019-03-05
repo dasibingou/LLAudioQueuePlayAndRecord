@@ -22,6 +22,7 @@
 		BB2391332220002800FD9C88 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23912E2220002800FD9C88 /* GCDAsyncUdpSocket.m */; };
 		BB2391342220002800FD9C88 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23912F2220002800FD9C88 /* GCDAsyncSocket.m */; };
 		BB23913722213C6B00FD9C88 /* AudioQueueSocketRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23913622213C6B00FD9C88 /* AudioQueueSocketRecord.m */; };
+		BB2391712223D60000FD9C88 /* UDPNATManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2391702223D60000FD9C88 /* UDPNATManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		BB2391312220002800FD9C88 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		BB23913522213C6B00FD9C88 /* AudioQueueSocketRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioQueueSocketRecord.h; sourceTree = "<group>"; };
 		BB23913622213C6B00FD9C88 /* AudioQueueSocketRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioQueueSocketRecord.m; sourceTree = "<group>"; };
+		BB23916F2223D60000FD9C88 /* UDPNATManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UDPNATManager.h; sourceTree = "<group>"; };
+		BB2391702223D60000FD9C88 /* UDPNATManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDPNATManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 		BB2390FF221D30CC00FD9C88 /* LLAudioQueuePlayAndRecord */ = {
 			isa = PBXGroup;
 			children = (
+				BB23916E2223D5E900FD9C88 /* NATManager */,
 				BB23912C2220002800FD9C88 /* GCDAsyncSocket */,
 				BB23911E221D4DE100FD9C88 /* Resource */,
 				BB239116221D330300FD9C88 /* AudioQueue */,
@@ -134,6 +138,15 @@
 				BB2391312220002800FD9C88 /* GCDAsyncSocket.h */,
 			);
 			path = GCDAsyncSocket;
+			sourceTree = "<group>";
+		};
+		BB23916E2223D5E900FD9C88 /* NATManager */ = {
+			isa = PBXGroup;
+			children = (
+				BB23916F2223D60000FD9C88 /* UDPNATManager.h */,
+				BB2391702223D60000FD9C88 /* UDPNATManager.m */,
+			);
+			path = NATManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +231,7 @@
 				BB2391332220002800FD9C88 /* GCDAsyncUdpSocket.m in Sources */,
 				BB239110221D30CE00FD9C88 /* main.m in Sources */,
 				BB239102221D30CC00FD9C88 /* AppDelegate.m in Sources */,
+				BB2391712223D60000FD9C88 /* UDPNATManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
